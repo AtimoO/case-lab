@@ -1,0 +1,14 @@
+.cards {
+  padding-bottom: 60px;
+}
+
+.title {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}

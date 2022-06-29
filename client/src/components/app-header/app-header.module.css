@@ -1,0 +1,84 @@
+.header {
+  width: 100%;
+  background-color: var(--background);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--link);
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.header__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.image {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.input {
+  font-size: 14px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid var(--background);
+  border-radius: 8px;
+  color: #212529;
+  background-color: var(--main-color);
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+}
+
+.input::placeholder {
+  color: #212529;
+  opacity: 0.4;
+}
+
+.button {
+  font-size: 14px;
+  border: 1px solid #bdbdbd;
+  width: 130px;
+  padding: 10px 5px;
+  border: 1px solid var(--background);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
