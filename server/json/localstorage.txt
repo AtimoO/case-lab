@@ -1,0 +1,24 @@
+localstorage: 
+{
+    "authorization": 
+    {
+        "user_id": integer,
+        "is_admin: boolean,
+        "ballance": integer,
+    },
+    "cart": 
+    {
+       "product-1":         
+        {
+            "product_id": integer,
+            "quantity": integer,
+            "price": integer,
+        },
+         "product-n": 
+        {
+            "product_id": integer,
+            "quantity": integer,
+            "price": integer,
+        }
+    }
+}
