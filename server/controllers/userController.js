@@ -4,7 +4,6 @@ const{User} = require('../models/models')
 class UserController {
     async registration(req, res) {
         const query = req.body
-        const info = {"login": query.login, "password": query.password, "balance": 0}
         try {
             const [user, created] = await User.findOrCreate({
                 where: { login: query.login },
