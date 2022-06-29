@@ -6,7 +6,8 @@ const sequlize = require('./db')
 const models = require('./models/models')
 const cors = require('cors')
 const router = require('./rotes/routing')
-// const errorsHandler = require('./error/errorsHandler')
+const fileUpload = require('express-fileupload')
+const path = require('path')
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -15,6 +16,8 @@ app.get('/', (req, res) => {
 
 app.use(cors())
 app.use(express.json())
+app.use(fileUpload({}))
+app.use(express.static(path.resolve(__dirname, 'static')))
 app.use('/api', router)
 // app.use(errorsHandler)
 
