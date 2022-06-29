@@ -42,10 +42,7 @@ const AppHeader = observer(() => {
           {user.isAuth ? (
             <>
               <li>
-                <NavLink
-                  className={styleAppHeader.link}
-                  to={PRODUCTS_PAGE_ROUTE}
-                >
+                <NavLink className={styleAppHeader.link} to={LOGIN_PAGE_ROUTE}>
                   Выйти
                 </NavLink>
               </li>

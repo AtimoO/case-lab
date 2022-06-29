@@ -1,6 +1,7 @@
 import AdminPage from "./admin";
 import AuthPage from "./auth";
 import BasketPage from "./basket";
+import CreateProductPage from "./create-product";
 import LoginPage from "./login";
 import ProductPage from "./product";
 import ProductsPage from "./products";
@@ -14,4 +15,5 @@ export {
   ProductPage,
   LoginPage,
   RegistationPage,
+  CreateProductPage,
 };

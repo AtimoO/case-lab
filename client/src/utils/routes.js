@@ -2,6 +2,7 @@ import {
   AdminPage,
   AuthPage,
   BasketPage,
+  CreateProductPage,
   ProductPage,
   ProductsPage,
 } from "../pages";
@@ -12,12 +13,17 @@ import {
   PRODUCTS_PAGE_ROUTE,
   PRODUCT_PAGE_ROUTE,
   REGISTER_PAGE_ROUTE,
+  CREATE_PRODUCT_PAGE_ROUTE,
 } from "./constants";
 
 export const authRoutes = [
   {
     path: ADMIN_PAGE_ROUTE,
     Copmonent: AdminPage,
+  },
+  {
+    path: CREATE_PRODUCT_PAGE_ROUTE,
+    Copmonent: CreateProductPage,
   },
   {
     path: BASKET_PAGE_ROUTE,
