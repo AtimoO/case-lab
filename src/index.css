@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-color);
 }
 
 code {
@@ -12,7 +13,14 @@ code {
     monospace;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  --background: #ffff;
+  --background: rgb(194, 189, 189);
+  --main-color: #ffff;
   --link: #000;
 }
