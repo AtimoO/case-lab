@@ -1,0 +1,10 @@
+пополнение кошелька
+
+{
+    {
+        "user_id": integer
+    },
+    {
+        "sum_of_put": integer
+    }
+}

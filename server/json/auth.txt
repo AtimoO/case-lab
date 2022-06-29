@@ -1,0 +1,24 @@
+Registration:
+request
+
+{
+    "login": string,
+    "password": string,
+}
+
+Authorization:
+request
+
+{
+    "login": string,
+    "password": string,
+}
+
+response
+
+{
+    "user_id": integer,
+    "is_admin": boolean 
+}
+
+
