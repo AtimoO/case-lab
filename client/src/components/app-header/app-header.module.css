@@ -14,12 +14,17 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
-  padding: 20px 0 0;
+  justify-content: flex-end;
+  align-items: baseline;
+  padding: 20px 0;
+  column-gap: 20px;
 }
 
 .link {
-  font-size: 20px;
+  border: 1px solid var(--main-text);
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 20px;
   text-decoration: none;
@@ -27,8 +32,21 @@
   transition: opacity 0.2s;
 }
 
+.links li:first-child {
+  flex-grow: 1;
+}
+
 .link:hover {
   opacity: 0.6;
+}
+
+.logo {
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(21, 231, 161);
+  text-shadow: 2px 2px 1px var(--main-text);
 }
 
 .header__group {
@@ -40,7 +58,6 @@
 .search {
   display: flex;
   align-items: center;
-  padding: 15px 0;
 }
 
 .image {
@@ -68,7 +85,7 @@
 .button {
   font-size: 14px;
   border: 1px solid #bdbdbd;
-  width: 130px;
+  width: 155px;
   padding: 10px 5px;
   border: 1px solid var(--background);
   border-radius: 8px;
@@ -81,4 +98,8 @@
 
 .button:hover {
   opacity: 0.8;
+}
+
+.price {
+  padding: 0 3px;
 }
