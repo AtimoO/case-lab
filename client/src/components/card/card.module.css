@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  color: var(--link);
+  background-color: rgba(189, 189, 189, 0.1);
+  transition: opacity 0.2s;
+}
+
+.card:hover {
+  opacity: 0.8;
+}
+
+.title {
+  padding-top: 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.image {
+  max-width: 330px;
+  max-height: 330px;
+}
+
+.description {
+  font-size: 18px;
+  padding-top: 8px;
+  max-width: 325px;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 18px;
+  padding: 8px 0;
+  font-weight: 700;
+}
+
+.button {
+  font-size: 14px;
+  border: 1px solid #bdbdbd;
+  padding: 10px 5px;
+  border: 1px solid var(--background);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+
+/* .card {
+  background: #ffffff;
+  position: relative;
+  width: 572px;
+  height: auto;
+  margin: 20px;
+  border-radius: 30px;
+}
+
+.content {
+  padding: 30px;
+}
+
+.date {
+  color: #10b2d0;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  padding-bottom: 10px;
+}
+
+.article {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  padding-bottom: 15px;
+}
+
+.text {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 30px;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #0050ef0f;
+  border: none;
+  color: #0050ef;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+} */

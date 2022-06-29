@@ -9,12 +9,8 @@ const App = () => {
       <AppHeader />
       <main className="container">
         <AppRouter />
-      </main>
 
-      {/*
-      <main className={styleApp.container}>
-        <Cards />
-      </main> */}
+      </main>
     </>
   );
 };

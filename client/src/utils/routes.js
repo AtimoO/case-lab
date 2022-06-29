@@ -7,10 +7,11 @@ import {
 } from "../pages";
 import {
   ADMIN_PAGE_ROUTE,
-  AUTH_PAGE_ROUTE,
+  LOGIN_PAGE_ROUTE,
   BASKET_PAGE_ROUTE,
   PRODUCTS_PAGE_ROUTE,
   PRODUCT_PAGE_ROUTE,
+  REGISTER_PAGE_ROUTE,
 } from "./constants";
 
 export const authRoutes = [
@@ -30,11 +31,11 @@ export const publicRoutes = [
     Copmonent: ProductsPage,
   },
   {
-    path: AUTH_PAGE_ROUTE,
+    path: LOGIN_PAGE_ROUTE,
     Copmonent: AuthPage,
   },
   {
-    path: AUTH_PAGE_ROUTE,
+    path: REGISTER_PAGE_ROUTE,
     Copmonent: AuthPage,
   },
   {

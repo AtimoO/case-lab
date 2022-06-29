@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 export default class UserStore {
   constructor() {
-    this._isAuth = true;
+    this._isAuth = false;
     this._user = {};
     // Следит за изменениями, аналог deps useEffect
     makeAutoObservable(this);

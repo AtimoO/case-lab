@@ -1,0 +1,51 @@
+.products {
+  padding-bottom: 60px;
+}
+
+.title {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-size: 38px;
+}
+
+.subtitle {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 250px 1fr;
+}
+
+.categories {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.category {
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  color: rgb(10, 20, 105);
+  transition: opacity .2s linear;
+}
+
+.category_active {
+  font-weight: 700;
+  color: rgb(17, 37, 211);
+}
+
+.category:hover {
+  opacity: 0.7;
+}
+
+.container__cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}

@@ -1,10 +1,10 @@
 import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Context } from "../..";
 import {
   ADMIN_PAGE_ROUTE,
-  AUTH_PAGE_ROUTE,
+  LOGIN_PAGE_ROUTE,
   BASKET_PAGE_ROUTE,
   PRODUCTS_PAGE_ROUTE,
 } from "../../utils/constants";
@@ -45,9 +45,6 @@ const AppHeader = observer(() => {
                 <NavLink
                   className={styleAppHeader.link}
                   to={PRODUCTS_PAGE_ROUTE}
-                  onClick={() => {
-                    user.setIsAuth(false);
-                  }}
                 >
                   Выйти
                 </NavLink>
@@ -71,13 +68,7 @@ const AppHeader = observer(() => {
           ) : (
             <>
               <li>
-                <NavLink
-                  className={styleAppHeader.link}
-                  to={AUTH_PAGE_ROUTE}
-                  onClick={() => {
-                    user.setIsAuth(true);
-                  }}
-                >
+                <NavLink className={styleAppHeader.link} to={LOGIN_PAGE_ROUTE}>
                   Авторизация
                 </NavLink>
               </li>
