@@ -1,11 +1,28 @@
 version: '3'
 
 services:
+  main:
+    container_name: nodejs
+    ports:
+      - "3000:3000"
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - dir:/app/static
+    networks:
+    - app-network
+    command: npm run dev
+    depends_on:
+      - psd
+    restart: always
+
   psd:
     container_name: psd
     image: postgres:14.1
     ports:
-      - "127.0.0.1:5470:5432"
+      - "5470:5432"
     env_file:
       - .env
     environment:
