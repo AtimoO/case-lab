@@ -1,3 +1,4 @@
+import { observer } from "mobx-react-lite";
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "..";
@@ -7,13 +8,13 @@ import {
 } from "../utils/constants";
 import styleAdmin from "./admin.module.css";
 
-const AdminPage = () => {
+const AdminPage = observer(() => {
   const { user } = useContext(Context);
 
-  console.log();
+  const userData = user.user.user_info ? user.user.user_info : user.user;
   const history = useHistory();
   return (
-    user.user.user_info && (
+    userData && (
       <div>
         <button
           className={`${styleAdmin.button} ${styleAdmin.button__back}`}
@@ -24,8 +25,8 @@ const AdminPage = () => {
           Назад
         </button>
         <h2 className={styleAdmin.title}>Личный кабинет</h2>
-        <p className={styleAdmin.text}>Логин: {user.user.user_info.login}</p>
-        <p className={styleAdmin.text}>Ваш баланс: {user.user.user_info.balance} руб.</p>
+        <p className={styleAdmin.text}>Логин: {userData.login}</p>
+        <p className={styleAdmin.text}>Ваш баланс: {userData.balance} руб.</p>
         <button
           className={`${styleAdmin.button} ${styleAdmin.mr}`}
           onClick={(e) => {
@@ -45,5 +46,5 @@ const AdminPage = () => {
       </div>
     )
   );
-};
+});
 export default AdminPage;

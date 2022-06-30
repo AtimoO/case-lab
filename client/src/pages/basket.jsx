@@ -6,9 +6,12 @@ import styleBasket from "./basket.module.css";
 
 const BasketPage = () => {
   const { user } = useContext(Context);
+
+  const userData = user.user.user_info ? user.user.user_info : user.user;
+
   const history = useHistory();
   return (
-    user.user.user_info && (
+    userData && (
       <div>
         <button
           className={`${styleBasket.button} ${styleBasket.button__back}`}
@@ -19,7 +22,7 @@ const BasketPage = () => {
           Назад
         </button>
         <h2 className={styleBasket.title}>Корзина</h2>
-        <p className={styleBasket.text}>Ваш баланс: {user.user.user_info.balance} руб.</p>
+        <p className={styleBasket.text}>Ваш баланс: {userData.balance} руб.</p>
         <div></div>
         <button className={styleBasket.button} onClick={(e) => {}}>
           Оформить заказ

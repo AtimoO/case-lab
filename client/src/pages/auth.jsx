@@ -20,23 +20,19 @@ const AuthPage = observer(() => {
   const [form, setForm] = useState({ login: "", password: "" });
 
   const submit = async (e) => {
-    try {
-      e.preventDefault();
-      let userData = null;
-      if (isLogin) {
-        userData = await login(form.login, form.password);
-      } else {
-        userData = await registation(form.login, form.password);
-      }
-      user.setUser(userData);
+    e.preventDefault();
+    let userData = null;
+    if (isLogin) {
+      userData = await login(form.login, form.password);
+    } else {
+      userData = await registation(form.login, form.password);
+    }
+    user.setUser(userData);
 
-      if (user.user.status === 200) {
-        localStorage.setItem("login", user.user.user_info.id);
-        user.setIsAuth(true);
-        history.push(PRODUCTS_PAGE_ROUTE);
-      }
-    } catch (e) {
-      console.log(e);
+    if (user.user.status === 200) {
+      localStorage.setItem("login", user.user.user_info.id);
+      user.setIsAuth(true);
+      history.push(PRODUCTS_PAGE_ROUTE);
     }
   };
 

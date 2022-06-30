@@ -9,15 +9,7 @@ export default class ProductStore {
       { id: 3, name: "Type3" },
       { id: 4, name: "Type4" },
     ];
-    this._products = [
-      {
-        id: 123,
-        title: "Название 1",
-        description: "Описание товара",
-        price: 700,
-        image: "https://dummyimage.com/200x200",
-      },
-    ];
+    this._products = [];
     this._selectedType = {};
     // Следит за изменениями, аналог deps useEffect
     makeAutoObservable(this);
