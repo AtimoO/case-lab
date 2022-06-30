@@ -14,12 +14,14 @@ const Product = sequelize.define('product', {
     title: {type: DataTypes.STRING, unique: true},
     description: {type: DataTypes.STRING},
     price: {type: DataTypes.INTEGER},
-    image: {type: DataTypes.STRING}
+    image: {type: DataTypes.STRING},
+    quantity: {type: DataTypes.INTEGER, default: 1},
 })
 
 const Order = sequelize.define('order', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    products: {type: DataTypes.STRING}
+    products: {type: DataTypes.STRING},
+    total_price: {type: DataTypes.INTEGER}
 })
 
 User.hasMany(Order)

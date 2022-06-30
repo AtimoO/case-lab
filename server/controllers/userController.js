@@ -12,7 +12,16 @@ class UserController {
                 }
             })
             if (created) {
-                res.json([{message: "User created"} , {user}])
+                res.json(
+                    {
+                    status: 200, 
+                    user_info: 
+                        {
+                            id: user.id,
+                            login: user.login,
+                            balance: user.balance,
+                        }
+                    })
             } else {
                 res.json({message: "User exist"})
             }
@@ -55,6 +64,17 @@ class UserController {
             where: {id: user_info.id}
         })
         res.json({message: "Balance was up", user_id: user_info.id, balance: new_balance})
+    }
+
+    async getUser (req, res) {
+        try {
+
+        const query = req.params
+        const user = await User.findOne({where: {"id": query.id}})
+        res.json({message: user})
+        } catch (e) {
+            res.json({message: "user not found"})
+        }
     }
 }
 

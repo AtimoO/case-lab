@@ -19,7 +19,6 @@ app.use(express.json())
 app.use(fileUpload({}))
 app.use(express.static(path.resolve(__dirname, 'static')))
 app.use('/api', router)
-// app.use(errorsHandler)
 
 const run = async () => {
   try {

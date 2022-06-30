@@ -8,6 +8,7 @@ class ProductController {
             let {title, description, price} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
+            let a = path.resolve( __dirname, '..', 'static', fileName)
             img.mv(path.resolve( __dirname, '..', 'static', fileName))
             const [product, created] = await Product.findOrCreate({
                 where: {"title": title},
