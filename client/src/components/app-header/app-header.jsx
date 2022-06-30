@@ -13,6 +13,13 @@ import styleAppHeader from "./app-header.module.css";
 
 const AppHeader = observer(() => {
   const { user } = useContext(Context);
+
+  const logOut = () => {
+    localStorage.removeItem("login");
+    user.setUser({});
+    user.setIsAuth(false);
+  };
+
   return (
     <header className={styleAppHeader.header}>
       <div className={styleAppHeader.container}>
@@ -25,24 +32,14 @@ const AppHeader = observer(() => {
               CaseLab
             </NavLink>
           </li>
-          {/* <li>
-            <div className={styleAppHeader.search}>
-              <img
-                className={styleAppHeader.image}
-                src="https://cdn-icons-png.flaticon.com/512/482/482631.png"
-                alt="Иконка поиск"
-              />
-              <input
-                className={styleAppHeader.input}
-                type="text"
-                placeholder="Введите название товара"
-              />
-            </div>
-          </li> */}
           {user.isAuth ? (
             <>
               <li>
-                <NavLink className={styleAppHeader.link} to={LOGIN_PAGE_ROUTE}>
+                <NavLink
+                  className={styleAppHeader.link}
+                  onClick={logOut}
+                  to={LOGIN_PAGE_ROUTE}
+                >
                   Выйти
                 </NavLink>
               </li>

@@ -1,10 +1,9 @@
 .container {
   display: flex;
-  gap: 30px;
-}
-
-.container__price {
-  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  width: 400px;
 }
 
 .title {
@@ -13,18 +12,13 @@
   font-weight: 700;
 }
 
-.text {
-  font-size: 18px;
-  padding-bottom: 30px;
-}
-
 .button {
+  align-self: flex-end;
   font-size: 14px;
   width: 150px;
   height: 40px;
   border: 1px solid #bdbdbd;
   padding: 10px 5px;
-  border: 1px solid var(--background);
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.2s;
@@ -42,14 +36,13 @@
 
 .input {
   font-size: 14px;
-  width: 300px;
+  width: 400px;
   padding: 10px;
   border: 1px solid var(--background);
   border-radius: 8px;
   color: #212529;
   background-color: var(--main-color);
   background-clip: padding-box;
-  border: 1px solid #bdbdbd;
 }
 
 .input::placeholder {

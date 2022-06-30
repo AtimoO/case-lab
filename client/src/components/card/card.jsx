@@ -14,10 +14,11 @@ const Card = observer(({ product, onClick }) => {
     <div className={styleCard.card} onClick={onClick}>
       <img
         className={styleCard.image}
-        src={product.image}
+        // src={product.image} - как будет время подумать, как из сервера достать картинку
+        src="https://dummyimage.com/200x200"
         alt={`Изоображение ${product.name}`}
       />
-      <h2 className={styleCard.title}>{product.name}</h2>
+      <h2 className={styleCard.title}>{product.title}</h2>
       <span className={styleCard.price}>{product.price} руб.</span>
       <button className={styleCard.button} onClick={order}>
         Заказать

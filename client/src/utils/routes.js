@@ -1,6 +1,7 @@
 import {
   AdminPage,
   AuthPage,
+  BalancePage,
   BasketPage,
   CreateProductPage,
   ProductPage,
@@ -14,6 +15,7 @@ import {
   PRODUCT_PAGE_ROUTE,
   REGISTER_PAGE_ROUTE,
   CREATE_PRODUCT_PAGE_ROUTE,
+  ADD_BALANCE_PAGE_ROUTE,
 } from "./constants";
 
 export const authRoutes = [
@@ -28,6 +30,10 @@ export const authRoutes = [
   {
     path: BASKET_PAGE_ROUTE,
     Copmonent: BasketPage,
+  },
+  {
+    path: ADD_BALANCE_PAGE_ROUTE,
+    Copmonent: BalancePage,
   },
 ];
 

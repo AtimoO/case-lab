@@ -6,6 +6,15 @@ import { authRoutes, publicRoutes } from "../../utils/routes";
 
 const AppRouter = () => {
   const { user } = useContext(Context);
+  const isLogin = localStorage.getItem("login");
+  if (isLogin) {
+    // const getUser = async () => {
+    //   await
+    // }
+    user.setIsAuth(true);
+  } else {
+    user.setIsAuth(false);
+  }
   return (
     <Switch>
       {user.isAuth &&

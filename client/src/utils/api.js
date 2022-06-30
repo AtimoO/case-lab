@@ -1,38 +1,36 @@
-import { config } from "./constants";
+import { $authHost, $host } from "./constants";
 
-const checkResponse = (response) => {
-  return response.ok
-    ? response.json()
-    : response.json().then((err) => Promise.reject(err));
+export const registation = async (login, password) => {
+  const { data } = await $host.post("api/user/reg", { login, password });
+  return data;
 };
 
-// create product: /product/create
-// get all product: /product/get-all
-// create product: /product/create
-// create product: /product/create
+export const login = async (login, password) => {
+  const { data } = await $host.post("api/user/aut", { login, password });
+  return data;
+};
 
-// registe user (POST): /user/reg
-// {
-//   "login": "NameLogin",
-//   "password": "pass"
-// }
+export const getProducts = async () => {
+  const { data } = await $host.get("api/product/get-all");
+  return data;
+};
 
-// login user (POST): /user/aut
-// {
-//   "login": "NameLogin",
-//   "password": "pass"
-// }
+export const upBalance = async (id, sum) => {
+  const { data } = await $host.post("api/user/balance", { id, sum });
+  return data;
+};
 
-// :id user (GET): /user/:id
+export const createProduct = async (title, description, price, img) => {
+  const { data } = await $host.post("api/user/balance", {
+    title,
+    description,
+    price,
+    img,
+  });
+  return data;
+};
 
-// ballance (POST): /user/ballance/
-// {
-//   "id": 6,
-//   "sum": 100
-// }
-
-export const getDataProducts = async () => {
-  return await fetch(`${config.baseUrl}/ingredients`, {
-    headers: config.headers,
-  }).then(checkResponse);
+export const getProduct = async (id) => {
+  const { data } = await $host.get(`api/product/${id}`);
+  return data;
 };
