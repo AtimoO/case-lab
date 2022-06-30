@@ -5,14 +5,14 @@ const path = require('path')
 class ProductController {
     async createProduct(req, res, next) {
         try {
-            let {title, description, price} = req.body
+            let {title, description, price, quantity} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
             let a = path.resolve( __dirname, '..', 'static', fileName)
             img.mv(path.resolve( __dirname, '..', 'static', fileName))
             const [product, created] = await Product.findOrCreate({
                 where: {"title": title},
-                defaults: {"title": title, "price": price, "description": description, "image": fileName}
+                defaults: {"title": title, "price": price, "description": description, "image": fileName, "quantity": quantity}
             });
             if (created) {
                 res.json([{message: "Product created"} , {product}])
