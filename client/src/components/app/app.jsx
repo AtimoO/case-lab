@@ -14,14 +14,24 @@ const App = observer(() => {
     });
   }, [products.createProduct]);
 
+
+
   return (
     <>
       <AppHeader />
       <main className="container">
-        {products.products.length > 0 && <AppRouter />}
+        <AppRouter />
       </main>
     </>
   );
 });
 
 export default App;
+
+
+/**
+ * TODO:
+ * 1. Доделать корзину
+ * 2. Стилизовать
+ * 3. Добавить обработку ошибок
+ */

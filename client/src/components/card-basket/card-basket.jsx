@@ -8,22 +8,31 @@ const CardBasket = observer(({ product }) => {
   const { basket } = useContext(Context);
   const [counter, setCounter] = useState(1);
   const [sum, setSum] = useState(0);
+  const [maxCount, setMaxCount] = useState(0);
 
   useEffect(() => {
     setSum(sum + product.price * counter);
   }, []);
 
+  useEffect(() => {
+    setMaxCount(product.quantity);
+  }, []);
+
   const increment = () => {
-    setCounter(counter + 1);
-    setSum(sum + product.price);
+    if (counter < maxCount) {
+      setCounter(counter + 1);
+      setSum(sum + product.price);
+    }
   };
 
   const decrement = () => {
     if (counter <= 0) {
       setCounter(0);
     } else {
-      setCounter(counter - 1);
-      setSum(sum - product.price);
+      if (counter <= maxCount) {
+        setCounter(counter - 1);
+        setSum(sum - product.price);
+      }
     }
   };
 

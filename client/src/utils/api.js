@@ -25,6 +25,11 @@ export const getProduct = async (id) => {
   return data;
 };
 
+export const removeProduct = async (id) => {
+  const { data } = await $host.get(`api/product/remove/${id}`);
+  return data;
+};
+
 export const createProduct = async (product) => {
   const { data } = await $authHost.post("api/product/create", product);
   return data;
@@ -32,5 +37,14 @@ export const createProduct = async (product) => {
 
 export const upBalance = async (id, sum) => {
   const { data } = await $host.post("api/user/balance", { id, sum });
+  return data;
+};
+
+export const createOrder = async (products, totalPrice, userId) => {
+  const { data } = await $host.post("api/order/create", {
+    products,
+    totalPrice,
+    userId,
+  });
   return data;
 };

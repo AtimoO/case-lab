@@ -16,7 +16,7 @@ const BalancePage = observer(() => {
     e.preventDefault();
     upBalance(userData.id, Number(balance)).then((res) => {
       setBalance("");
-      user.setIsAddBalance(!user.isAddBalance)
+      user.setIsAddBalance(!user.isAddBalance);
     });
   };
   return (

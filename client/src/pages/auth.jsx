@@ -28,7 +28,6 @@ const AuthPage = observer(() => {
       userData = await registation(form.login, form.password);
     }
     user.setUser(userData);
-
     if (user.user.status === 200) {
       localStorage.setItem("login", user.user.user_info.id);
       user.setIsAuth(true);

@@ -10,7 +10,7 @@ import styleProducts from "./products.module.css";
 const ProductsPage = observer(() => {
   const { products } = useContext(Context);
   const history = useHistory();
-  return (
+  return products.products.length > 0 ? (
     <section className={styleProducts.products}>
       <h1 className={styleProducts.title}>Список товаров</h1>
       <div className={styleProducts.container}>
@@ -47,6 +47,8 @@ const ProductsPage = observer(() => {
         </div>
       </div>
     </section>
+  ) : (
+    <div style={{ textAlign: "center", fontSize: 32 }}>Нет товаров</div>
   );
 });
 export default ProductsPage;

@@ -15,10 +15,6 @@ export default class BasketStore {
   setUniqProductBasket(array) {
     this._uniqProductBasket = array;
   }
-  setSumCount(sum) {
-    console.log(sum)
-    this._sumCount = sum;
-  }
 
   get basket() {
     return this._basket;

@@ -5,6 +5,8 @@ import styleOrder from "./order.module.css";
 
 const Order = observer(() => {
   const { basket } = useContext(Context);
+  const count = basket.basketAll.reduce((acc, pr) => acc + pr.price, 0);
+
   return (
     <div className={styleOrder.container}>
       <div>

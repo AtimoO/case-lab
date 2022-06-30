@@ -23,7 +23,8 @@ const AppRouter = observer(() => {
       localStorage.removeItem("login");
       user.setIsAuth(false);
     }
-  }, [user.isAddBalance, isLogin]);
+  }, [user.isAddBalance, isLogin, user.isAuth]);
+
   return (
     <Switch>
       {isLogin &&
