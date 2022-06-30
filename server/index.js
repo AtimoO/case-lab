@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload')
 const path = require('path')
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello Greenatom!')
 })
 
 
@@ -33,6 +33,5 @@ const run = async () => {
     console.log("ERROR: " + e)
   }
 }
-
 
 run()
