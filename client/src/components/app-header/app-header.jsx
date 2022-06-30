@@ -13,12 +13,24 @@ import styleAppHeader from "./app-header.module.css";
 
 const AppHeader = observer(() => {
   const { user } = useContext(Context);
+  const { basket } = useContext(Context);
 
   const logOut = () => {
     localStorage.removeItem("login");
     user.setUser({});
     user.setIsAuth(false);
   };
+
+  const sortUniqProducts = (xs) => {
+    let seen = {};
+    return xs.filter(function (x) {
+      let key = JSON.stringify(x);
+      return !(key in seen) && (seen[key] = x);
+    });
+  };
+
+  const countBasket = sortUniqProducts(basket.basket);
+  basket.setUniqProductBasket(countBasket);
 
   return (
     <header className={styleAppHeader.header}>
@@ -55,7 +67,10 @@ const AppHeader = observer(() => {
                     src="https://cdn-icons-png.flaticon.com/512/1332/1332655.png"
                     alt="Корзина"
                   />
-                  <span className={styleAppHeader.price}>1111</span>Корзина
+                  <span className={styleAppHeader.price}>
+                    {countBasket.length}
+                  </span>
+                  Корзина
                 </NavLink>
               </li>
             </>

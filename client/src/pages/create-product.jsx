@@ -20,7 +20,6 @@ const CreateProductPage = observer(() => {
 
   const addProduct = (e) => {
     e.preventDefault();
-    console.log(form);
     let formData = new FormData();
     formData.append("title", form.title);
     formData.append("description", form.description);
@@ -29,7 +28,7 @@ const CreateProductPage = observer(() => {
     formData.append("img", form.img);
     createProduct(formData)
       .then((res) => {
-        console.log(res);
+        products.setCreateProduct(!products.createProduct);
         setForm({
           title: "",
           description: "",

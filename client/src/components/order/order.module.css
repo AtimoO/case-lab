@@ -1,20 +1,29 @@
 .container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  text-align: center;
 }
 
 .title {
-  padding: 20px 0 30px;
+  padding: 0 0 20px;
   font-size: 28px;
   font-weight: 700;
 }
 
 .text {
   font-size: 18px;
-  padding-bottom: 30px;
+  margin: 0;
+  padding-right: 10px;
+}
+
+.text_bold {
+  font-weight: bold;
 }
 
 .button {
+  margin-top: 20px;
+  align-self: center;
   font-size: 14px;
   width: 150px;
   height: 40px;
@@ -35,8 +44,3 @@
   height: 35px;
 }
 
-.container__order {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 20px;
-}

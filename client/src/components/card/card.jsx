@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { observer } from "mobx-react-lite";
 import styleCard from "./card.module.css";
-import { useHistory } from "react-router-dom";
-import { BASKET_PAGE_ROUTE, config } from "../../utils/constants";
+import { config } from "../../utils/constants";
+import { Context } from "../..";
 
 const Card = observer(({ product, onClick }) => {
-  const history = useHistory();
+  const { basket } = useContext(Context);
   const order = (e) => {
     e.stopPropagation();
-    history.push(BASKET_PAGE_ROUTE);
+    if (product) {
+      basket.setBasket(product);
+    }
   };
   return (
     <div className={styleCard.card} onClick={onClick}>
       <img
         className={styleCard.image}
         src={`${config.baseUrl}/${product.image}`}
-        // src="https://dummyimage.com/200x200"
         alt={`Изоображение ${product.name}`}
       />
       <h2 className={styleCard.title}>{product.title}</h2>
       <span className={styleCard.price}>{product.price} руб.</span>
       <button className={styleCard.button} onClick={order}>
-        Заказать
+        Добавить в корзину
       </button>
     </div>
   );

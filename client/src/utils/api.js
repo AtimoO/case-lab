@@ -26,7 +26,6 @@ export const getProduct = async (id) => {
 };
 
 export const createProduct = async (product) => {
-  console.log(product);
   const { data } = await $authHost.post("api/product/create", product);
   return data;
 };

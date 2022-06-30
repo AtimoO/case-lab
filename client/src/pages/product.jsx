@@ -1,11 +1,13 @@
 import { observer } from "mobx-react-lite";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { Context } from "..";
 import { getProduct } from "../utils/api";
-import { BASKET_PAGE_ROUTE, config } from "../utils/constants";
+import { config } from "../utils/constants";
 import styleProduct from "./product.module.css";
 
 const ProductPage = observer(() => {
+  const { basket } = useContext(Context);
   const [product, setProduct] = useState(null);
   const { id } = useParams();
   const history = useHistory();
@@ -15,6 +17,12 @@ const ProductPage = observer(() => {
       setProduct(product);
     });
   }, []);
+
+  const addBasket = () => {
+    if (product) {
+      basket.setBasket(product);
+    }
+  };
 
   return (
     product && (
@@ -37,13 +45,8 @@ const ProductPage = observer(() => {
           <p className={styleProduct.description}>{product.description}</p>
           <div className={styleProduct.container__price}>
             <span className={styleProduct.price}>{product.price} руб.</span>
-            <button
-              className={styleProduct.button}
-              onClick={(e) => {
-                history.push(BASKET_PAGE_ROUTE);
-              }}
-            >
-              Заказать
+            <button className={styleProduct.button} onClick={addBasket}>
+              Добавить в корзину
             </button>
           </div>
         </div>

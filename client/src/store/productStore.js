@@ -10,8 +10,9 @@ export default class ProductStore {
       { id: 4, name: "Type4" },
     ];
     this._products = [];
+    this._createProduct = false;
     this._selectedType = {};
-    // Следит за изменениями, аналог deps useEffect
+
     makeAutoObservable(this);
   }
 
@@ -22,12 +23,18 @@ export default class ProductStore {
   setTypes(types) {
     this._types = types;
   }
+  setCreateProduct(bool) {
+    this._createProduct = bool;
+  }
   setProducts(products) {
     this._products = products;
   }
 
   get types() {
     return this._types;
+  }
+  get createProduct() {
+    return this._createProduct;
   }
   get products() {
     return this._products;

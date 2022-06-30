@@ -8,10 +8,11 @@ import AppRouter from "../app-router/app-router";
 const App = observer(() => {
   const { products } = useContext(Context);
 
-  useEffect(async () => {
-    const data = await getProducts();
-    products.setProducts(data.products);
-  }, [products]);
+  useEffect(() => {
+    getProducts().then((res) => {
+      products.setProducts(res.products);
+    });
+  }, [products.createProduct]);
 
   return (
     <>
