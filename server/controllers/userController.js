@@ -13,9 +13,8 @@ class UserController {
             })
             if (created) {
                 res.json(
-                    {
-                    status: 200, 
-                    user_info: 
+                    {status: 200, 
+                        user_info: 
                         {
                             id: user.id,
                             login: user.login,
@@ -57,7 +56,9 @@ class UserController {
 
     async putMoney (req, res) {
         const query = req.body
+        console.log("🚀 ~ file: userController.js ~ line 59 ~ UserController ~ putMoney ~ query", query)
         const user_info = await User.findOne({where: {"id": query.id}})
+        
         const new_balance = query.sum + user_info.balance
         
         await User.update({balance: new_balance}, {
