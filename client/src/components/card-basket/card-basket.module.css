@@ -1,0 +1,58 @@
+.container {
+  max-width: 100%;
+  border: 2px solid #bdbdbd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+
+.image {
+  border-radius: 10px 0 0 10px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.title {
+  padding: 20px 0 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.button {
+  font-size: 14px;
+  width: 30px;
+  border: 1px solid #bdbdbd;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.container__price {
+  justify-self: flex-end;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.container_description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.wrapper {
+  align-self: flex-start;
+}

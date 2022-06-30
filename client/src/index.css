@@ -8,19 +8,65 @@ body {
   background-color: var(--main-color);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: var(--main-text);
 }
 
 :root {
   --background: rgb(194, 189, 189);
   --main-color: #ffff;
   --link: #000;
+  --main-text: #000;
+  --text-inactive-color: rgb(77, 77, 77);
+  --colors-interface-accent: rgb(63, 59, 59);
+  --common-transition: opacity 0.2s linear;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.input_text {
+  font-size: 14px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid var(--background);
+  border-radius: 8px;
+  color: #212529;
+  background-color: var(--main-color);
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+}
+
+.button_main {
+  font-size: 14px;
+  border: 1px solid #bdbdbd;
+  width: 155px;
+  padding: 10px 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.button_main:hover {
+  opacity: 0.6;
+}
+
+.text_main {
+  font-size: 32px;
+}
+
+.text_default {
+  font-size: 16px;
 }

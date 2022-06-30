@@ -1,0 +1,16 @@
+http://127.0.0.1:3000/api/user/reg
+    
+    req
+    {
+        "login": "User1",
+        "password": "pass1"
+    }
+    resp
+    {
+        "status": 200,
+        "user_info": {
+            "id": 1,
+            "login": "User2",
+            "balance": 0
+        }
+    }
